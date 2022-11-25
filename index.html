@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHALLENGE-TWO: RESIZE FONT</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+  <!-- create container  -->
+    <div class="container">
+      <!-- add textarea for input text -->
+      <label for="input-txt">Type something:</label>
+      <textarea  rows="5" cols="30"class="input-text" id="myTextarea">
+      </textarea>
+       <div class="output">
+          <button type="button" onclick="output()"class="btn">Output</button>
+          <button id="inc">+</button>
+        <button  id="dec">-</button>
+        <h1 id="demo"></h1>
+        </div>
+    </div>
+    <script>
+       let inp = document.getElementById("demo");
+        let increment = document.getElementById("inc");
+        let decrement = document.getElementById("dec");
+        let size = 16;
+        increment.addEventListener("click", enlarge);
+        function enlarge() {
+          size = size + 2;
+          inp.style.fontSize = `${size}px`;
+        }
+        decrement.addEventListener("click", reduce);
+        function reduce() {
+          size = size - 2;
+          inp.style.fontSize = `${size}px`;
+        }
+        function output() {
+        var x = document.getElementById("myTextarea").value;
+        document.getElementById("demo").innerHTML = x;
+}
+</script>
+</body>
+</html>
